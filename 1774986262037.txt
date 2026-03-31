@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deepak Bakery Hapur | 1968 से Avas Vikas | Cakes, Patties, Rolls</title>
+    <meta name="description" content="Deepak Bakery Sanjay Vihar, Avas Vikas Hapur. 1968 से - Eggless Cakes, Delicious Patties, Cream Rolls, Shakes. Home Delivery Available. 11AM-10PM">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍰</text></svg>">
+    <style>
+        :root {
+            --primary: #d63031;
+            --secondary: #e17055;
+            --accent: #00b894;
+            --dark: #2d3436;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: system-ui, -apple-system, sans-serif; line-height: 1.6; color: #333; overflow-x: hidden; }
+        .container { max-width: 1200px; margin: auto; padding: 0 1.5rem; }
+
+        /* Header */
+        header { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; padding: 0.8rem 0; position: fixed; width: 100%; top: 0; z-index: 1000; box-shadow: 0 4px 20px rgba(214,48,49,0.3); }
+        nav { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.8rem; font-weight: 800; letter-spacing: -1px; }
+        .header-contact { display: flex; gap: 1rem; align-items: center; }
+        .phone-link { background: rgba(255,255,255,0.2); padding: 8px 16px; border-radius: 25px; text-decoration: none; color: white; font-weight: 600; transition: all 0.3s; }
+        .phone-link:hover { background: rgba(255,255,255,0.3); transform: scale(1.05); }
+
+        /* Hero */
+        .hero { background: linear-gradient(135deg, rgba(214,48,49,0.95), rgba(225,112,85,0.9)), 
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 800"><defs><radialGradient id="a" cx="40%" cy="40%" r="50%"><stop offset="0%" stop-color="%23fff176"/><stop offset="70%" stop-color="%23ffb74d"/><stop offset="100%" stop-color="%23ff9800"/></radialGradient></defs><rect fill="%23ffe082" width="1400" height="800" rx="100"/><circle fill="url(%23a)" cx="200" cy="200" r="120"/><circle fill="%23f48fb1" cx="1200" cy="250" r="100"/><ellipse fill="%23a17055" cx="700" cy="550" rx="150" ry="80"/></svg>'); 
+               min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; color: white; margin-top: 80px; position: relative; }
+        .hero-content h1 { font-size: clamp(2.5rem, 6vw, 4rem); margin-bottom: 1rem; font-weight: 800; text-shadow: 3px 3px 10px rgba(0,0,0,0.4); }
+        .hero-subtitle { font-size: clamp(1.1rem, 3vw, 1.5rem); margin-bottom: 2rem; opacity: 0.95; }
+        .cta-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; max-width: 600px; margin: 0 auto; }
+        .btn { padding: 16px 32px; border: none; border-radius: 50px; font-size: 1.1rem; font-weight: 600; cursor: pointer; text-decoration: none; transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 0.5rem; }
+        .btn-primary { background: var(--accent); color: white; box-shadow: 0 8px 25px rgba(0,184,148,0.4); }
+        .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 12px 35px rgba(0,184,148,0.6); }
+        .btn-outline { background: transparent; color: white; border: 2px solid white; }
+
+        /* Sections */
+        section { padding: 6rem 0; }
+        .section-title { text-align: center; font-size: clamp(2rem, 5vw, 3rem); color: var(--primary); margin-bottom: 3.5rem; font-weight: 700; position: relative; }
+        .section-title::after { content: ''; width: 100px; height: 5px; background: linear-gradient(90deg, var(--primary), var(--secondary)); border-radius: 3px; margin: 1rem auto 0; display: block; }
+
+        /* About */
+        .about { background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); }
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+        .about-text h3 { color: var(--primary); font-size: 1.8rem; margin-bottom: 1.5rem; }
+        .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+        .feature { text-align: center; padding: 1.5rem; background: white; border-radius: 15px; box-shadow: 0 8px 25px rgba(0,0,0,0.08); transition: transform 0.3s; }
+        .feature:hover { transform: translateY(-5px); }
+        .feature-icon { font-size: 3rem; margin-bottom: 1rem; display: block; }
+
+        /* Menu */
+        .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 2.5rem; }
+        .menu-card { background: white; border-radius: 25px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.1); transition: all 0.4s ease; position: relative; }
+        .menu-card:hover { transform: translateY(-15px); box-shadow: 0 30px 80px rgba(0,0,0,0.15); }
+        .card-header { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; padding: 2.5rem 2rem; text-align: center; }
+        .card-title { font-size: 1.6rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .card-items { padding: 2rem; }
+        .menu-item { display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 0; border-bottom: 1px solid #f0f0f0; transition: background 0.2s; }
+        .menu-item:hover { background: #f8f9fa; border-radius: 10px; padding-left: 1rem; margin: 0 -1rem; }
+        .item-name { font-weight: 500; }
+        .item-price { color: var(--accent); font-weight: 700; font-size: 1.3rem; }
+
+        /* Contact */
+        .contact { background: var(--dark); color: white; }
+        .contact-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; text-align: center; }
+        .contact-highlight { background: rgba(255,255,255,0.1); padding: 3rem 2rem; border-radius: 25px; backdrop-filter: blur(15px); border: 1px solid rgba(255,255,255,0.2); }
+        .contact-highlight h3 { color: #ffa726; font-size: 1.6rem; margin-bottom: 1.5rem; }
+        .address { font-size: 1.2rem; line-height: 1.8; margin-bottom: 2rem; }
+        .phone-numbers { display: flex; flex-direction: column; gap: 1rem; margin-top: 1.5rem; }
+        .phone-big { font-size: 2.2rem; font-weight: 800; background: linear-gradient(135deg, #ffa726, #ff9800); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+
+        /* Footer */
+        footer { background: #1a1a1a; color: #aaa; text-align: center; padding: 3rem 0 2rem; }
+        .footer-content { opacity: 0.8; }
+
+        /* WhatsApp & Animations */
+        .whatsapp-float { position: fixed; bottom: 25px; right: 25px; background: #25D366; color: white; width: 65px; height: 65px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; box-shadow: 0 8px 30px rgba(37,211,102,0.4); z-index: 9999; transition: transform 0.3s; }
+        .whatsapp-float:hover { transform: scale(1.1); }
+
+        @media (max-width: 768px) {
+            .about-grid, .contact-content { grid-template-columns: 1fr; }
+            .header-contact { flex-direction: column; gap: 0.5rem; }
+            nav { flex-direction: column; gap: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">🍰 Deepak Bakery</div>
+            <div class="header-contact">
+                <a href="tel:+919319726643" class="phone-link">📞 Call Now</a>
+                <span style="font-size: 0.9rem; opacity: 0.9;">11 AM - 10 PM</span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Deepak Bakery</h1>
+            <p class="hero-subtitle">1968 से Avas Vikas, हापुड़<br><strong>Delicious Patties • Ultimate Cakes • Fresh Rolls</strong></p>
+            <div class="cta-grid">
+                <a href="#menu" class="btn btn-primary">🍪 मेन्यू देखें</a>
+                <a href="#contact" class="btn btn-outline">📍 विजिट करें</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">56 सालों का स्वाद</h2>
+            <div class="about-grid">
+                <div>
+                    <h3>हापुड़ की फेवरेट बेकरी</h3>
+                    <p><strong>Sanjay Vihar, Avas Vikas</strong> में स्थित Deepak Bakery 1968 से आपके स्वाद का साथी है। ₹250 में दो लोगों के लिए परफेक्ट!</p>
+                    <div class="features">
+                        <div class="feature">
+                            <span class="feature-icon">🚚</span>
+                            <strong>Home Delivery</strong><br>Zomato • Swiggy
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">🎂</span>
+                            <strong>Custom Cakes</strong><br>Birthdays • Anniversaries
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">🌱</span>
+                            <strong>Vegetarian</strong><br>100% Eggless Options
+                        </div>
+                    </div>
+                </div>
+                <div style="text-align: center;">
+                    <div style="font-size: 4rem; color: var(--primary); font-weight: 800; margin-bottom: 1rem;">1968</div>
+                    <p style="font-size: 1.3rem; opacity: 0.9;">से आपके विश्वास का साथी</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu -->
+    <section id="menu" class="menu">
+        <div class="container">
+            <h2 class="section-title">पॉपुलर मेन्यू आइटम्स</h2>
+            <div class="menu-grid">
+                <!-- Cakes & Pastries -->
+                <div class="menu-card">
+                    <div class="card-header">
+                        <div class="card-title">🎂 केक & पेस्ट्री</div>
+                    </div>
+                    <div class="card-items">
+                        <div class="menu-item">
+                            <span class="item-name">Ultimate Chocolate Cake</span>
+                            <span class="item-price">₹450+</span>
+                        </div>
+                        <div class="menu-item">
+                            <span class="item-name">Custom Birthday Cake</span>
+                            <span class="item-price">Call</span>
+                        </div>
+                        <div class="menu-item">
+                            <span class="item-name">Fresh Pastries</span>
+                            <span class="item-price">₹40+</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Patties & Snacks -->
+                <div class="menu-card">
+                    <div class="card-header">
+                        <div class="card-title">🌮 Delicious Patties</div>
+                    </div>
+                    <div class="card-items">
+                        <div class="menu-item">
+                            <span class="item-name">Aloo Patties</span>
+                            <span class="item-price">₹25</span>
+                        </div>
+                        <div class="menu-item">
+                            <span class="item-name">Paneer Tikka Patties</span>
+                            <span class="item-price">₹35</span>
+                        </div>
+                        <div class="menu-item">
+                            <span class="item-name">Hot Dogs</span>
+                            <span class="item-price">₹50</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Rolls & Drinks -->
+                <div class="menu-card">
+                    <div class="card-header">
+                        <div class="card-title">🥪 रोल्स & शेक्स</div>
+                    </div>
+                    <div class="card-items">
+                        <div class="menu-item">
+                            <span class="item-name">Paneer Roll</span>
+                            <span class="item-price">₹60</span>
+                        </div>
+                        <div class="menu-item">
+                            <span class="item-name">Veg Wrap</span>
+                            <span class="item-price">₹55</span>
+                        </div>
+                        <div class="menu-item">
+                            <span class="item-name">Cream Rolls</span>
+                            <span class="item-price">₹30</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">तुरंत संपर्क करें</h2>
+            <div class="contact-content">
+                <div class="contact-highlight">
+                    <h3>📍 पूरा पता</h3>
+                    <div class="address">
+                        <strong>Deepak Bakery</strong><br>
+                        Sanjay Vihar, Avas Vikas<br>
+                        Hapur-245101, Uttar Pradesh
+                    </div>
+                    <div style="margin-top: 2rem;">
+                        <div style="font-size: 1.3rem; opacity: 0.9;">🕒 11:00 AM - 10:00 PM</div>
+                        <div style="font-size: 1.1rem; opacity: 0.8; margin-top: 0.5rem;">Monday - Sunday</div>
+                    </div>
+                </div>
+                <div class="contact-highlight">
+                    <h3>📞 कॉल / व्हाट्सएप</h3>
+                    <div class="phone-numbers">
+                        <a href="tel:+919319726643" class="phone-big">93197 26643</a>
+                        <p style="opacity: 0.9; margin: 1rem 0;">Home Delivery Available<br>Custom Cake Orders</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p><strong>🍰 Deepak Bakery - हापुड़</strong><br>1968 से आपके स्वाद का साथी</p>
+                <p>Sanjay Vihar, Avas Vikas | 11 AM - 10 PM | Home Delivery</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/919319726643?text=Deepak%20Bakery%20Hapur%20से%20ऑर्डर%20करना
